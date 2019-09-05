@@ -1,4 +1,4 @@
-var movies = ["The Big Lebowski", "The Matrix", "American Gangster", "Fight Club", "Fantastic Mr. Fox", "Arrival", "Step Brothers", "Best In Show", "Zoolander", "This Is Spinaltap", "Coraline"];
+var movies = ["The Big Lebowski", "The Matrix", "American Gangster", "Fight Club", "Fantastic Mr. Fox", "Arrival", "Step Brothers", "Best In Show", "Zoolander", "This Is Spinal Tap", "Coraline"];
 
 function displayGifs() {
 
@@ -21,19 +21,44 @@ function displayGifs() {
  
       var movieGif = $("<img>");
 
-      movieGif.attr("src", results[i].images.fixed_height.url);
+      movieGif.attr("src", results[i].images.fixed_height_still.url);
       movieGif.attr("class", "gif");
+      movieGif.attr("data-state","still")
 
       gifDiv.append(movieGif);
       gifDiv.append(rating);
 
       $("#gifSection").prepend(gifDiv)
-
+      
     }
-    
-  });
 
+    $(".gif").on("click", function() {
+      var state = $(this).attr("data-state");
+        for (var i = 0; i < results.length; i++) {
+          if (state === "still") {
+            $(this).attr("src", results[i].images.fixed_height.url);
+            $(this).attr("data-state", "animate");
+          }
+          else {
+            $(this).attr("src", results[i].images.fixed_height_still.url);
+            $(this).attr("data-state", "still"); 
+        }
+      }
+    })
+
+  });
 }
+
+/* $(".gif").on("click", function() {
+  console.log("butt")
+     if (state === "still") {
+    $(this).attr("src", results[i].images.fixed_height.url);
+    $(this).attr("data-state", "animate");
+  } else {
+    $(this).attr("src", results[i].images.fixed_height_still.url);
+    $(this).attr("data-state", "still"); 
+  } 
+}); */
 
 
 function renderButtons() {
@@ -52,7 +77,7 @@ $("#movieSearchSubmit").on("click", function(event) {
   var movie = $("#movieInput").val().trim();
   movies.push(movie);
   renderButtons();
-
+  $("#form").trigger('reset');
 });
 
 $(document).on("click", ".movie", displayGifs);

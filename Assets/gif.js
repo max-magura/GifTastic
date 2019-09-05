@@ -21,9 +21,12 @@ function displayGifs() {
  
       var movieGif = $("<img>");
 
-      movieGif.attr("src", results[i].images.fixed_height_still.url);
+      movieGif.attr({
+        "src": results[i].images.fixed_height_still.url,
+        "data-still": results[i].images.fixed_height_still.url,
+        "data-animate": results[i].images.fixed_height.url,
+        "data-state": "still"});
       movieGif.attr("class", "gif");
-      movieGif.attr("data-state","still")
 
       gifDiv.append(movieGif);
       gifDiv.append(rating);
@@ -34,31 +37,17 @@ function displayGifs() {
 
     $(".gif").on("click", function() {
       var state = $(this).attr("data-state");
-        for (var i = 0; i < results.length; i++) {
-          if (state === "still") {
-            $(this).attr("src", results[i].images.fixed_height.url);
-            $(this).attr("data-state", "animate");
-          }
-          else {
-            $(this).attr("src", results[i].images.fixed_height_still.url);
-            $(this).attr("data-state", "still"); 
-        }
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
       }
     })
 
   });
 }
-
-/* $(".gif").on("click", function() {
-  console.log("butt")
-     if (state === "still") {
-    $(this).attr("src", results[i].images.fixed_height.url);
-    $(this).attr("data-state", "animate");
-  } else {
-    $(this).attr("src", results[i].images.fixed_height_still.url);
-    $(this).attr("data-state", "still"); 
-  } 
-}); */
 
 
 function renderButtons() {

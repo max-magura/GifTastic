@@ -6,18 +6,38 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="Assets/style.css">
+  
   <title>Max's Giftastic Movies</title>
 </head>
 <body>
-  <div id="movieButtons"></div>
 
-  <form id="form">
-    <p>Add A Movie</p>
-    <input type="text" id="movieInput">
-    <input id="movieSearchSubmit" type="submit">
-  </form>
+  <div class="container">
+  <div class="row">
+  <div class="col-10">
 
-  <div id="gifSection"></div>
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-5">Max's Giftastic Movies</h1>
+            <h3 class="display-6">Select a button to see 10 gifs. Click on the gifs to play and pause them. And add your own movie buttons via the form.</h3>
+          </div>
+      </div>
+
+      <div id="movieButtons"></div>
+
+      <form id="form" class="form-inline justify-content-center">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Add a Button</label>
+        <input type="text"  class="form-control"  id="movieInput">
+        <input class="btn btn-dark" id="movieSearchSubmit" type="submit">
+      </form>
+
+      <div id="gifSection"></div>
+
+  </div>
+  </div>
+  </div>
+
+
+
   
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

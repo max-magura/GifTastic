@@ -55,6 +55,7 @@ function renderButtons() {
   for (var i = 0; i < movies.length; i++) {
     var a = $("<button>");
     a.addClass("movie");
+    a.addClass("btn btn-dark");
     a.attr("data-name", movies[i]);
     a.text(movies[i]);
     $("#movieButtons").append(a);

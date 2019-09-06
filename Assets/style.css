@@ -1,0 +1,33 @@
+body {
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.movie {
+  margin: 10px;
+  background: #6b778d;
+}
+
+#movieSearchSubmit {
+  margin: 10px;
+  background: #ff6768;
+}
+
+#form {
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+
+#gifSection {
+  display: inline;
+}
+
+form {
+  margin: 0 auto;
+}
+
+.jumbotron {
+  background-color: #17223b;
+}

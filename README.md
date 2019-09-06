@@ -1,4 +1,4 @@
-# Max's Giftastic Movies
+# Max's GifTastic Movies
 
 This was a fun API and AJAX assignment where I used the Giphy API to render gifs
 
@@ -7,4 +7,4 @@ Buttons with movie titles will appear on the screen. Select a button to see 10 g
 
 ## Visit
 
-You can find the site [here](https://max-magura.github.io/Giftastic/).
+You can find the site [here](https://max-magura.github.io/GifTastic/).

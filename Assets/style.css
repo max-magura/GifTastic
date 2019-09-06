@@ -5,6 +5,16 @@ body {
   color: white;
 }
 
+
+
+p {
+  color: black;
+}
+
+#formText {
+  color: black;
+}
+
 .movie {
   margin: 10px;
   background: #6b778d;
@@ -30,4 +40,15 @@ form {
 
 .jumbotron {
   background-color: #17223b;
+}
+
+#gifContainer {
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 140px;
+}
+
+.gifDiv {
+  margin: 10px;
+
 }
